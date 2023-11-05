@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/accountPreferencesHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="120dp"
+        android:text="Account Preferences"
+        android:textColor="#006400"
+        android:textSize="24sp" />
+
+
+    <TextView
+        android:id="@+id/accountInfoText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name, Email, Class, etc."
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="25dp"
+        android:textSize="20sp"
+        android:clickable="true"
+        android:focusable="true"/>
+
+
+
+    <TextView
+        android:id="@+id/userProfileHintTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="5dp"
+        android:text="User Profile"
+        android:textColor="#706E6E" />
+
+
+    <CheckBox
+        android:id="@+id/privacyCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Privacy settings"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="16dp"
+        />
+
+
+    <TextView
+        android:id="@+id/privacyHintTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Posting your records anonymously"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="16dp"
+        android:visibility="gone" />
+
+
+    <TextView
+        android:id="@+id/additionalSettingsHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="60dp"
+        android:text="Additional Settings"
+        android:textColor="#006400"
+
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/unitPreferenceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:textSize="20sp"
+        android:text="Unit Preference"
+        android:textColor="#434242" />
+
+    <TextView
+        android:id="@+id/commentsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comments"
+        android:textSize="20sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="20dp"
+        android:clickable="true"
+        android:focusable="true"/>
+
+    <TextView
+        android:id="@+id/miscellaneousHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="80dp"
+        android:text="Miscellaneous"
+        android:textColor="#006400"
+        android:textSize="24sp" />
+
+
+    <TextView
+        android:id="@+id/webpageTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Webpage"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="10dp" />
+
+
+    <TextView
+        android:id="@+id/linkTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="3dp"
+        android:text="https://www.sfu.ca/computing.html"
+        android:textColor="?android:attr/colorPrimary"
+        android:clickable="true"
+        android:focusable="true" />
+
+
+</LinearLayout>
