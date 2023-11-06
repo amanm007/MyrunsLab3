@@ -1,4 +1,5 @@
 package com.example.aman_singh_301417077_myrun2
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -6,6 +7,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import java.text.SimpleDateFormat
+import java.util.*
 
 class ExerciseEntryAdapter(private val onClick: (ExerciseEntry) -> Unit) :
     ListAdapter<ExerciseEntry, ExerciseEntryAdapter.ExerciseEntryViewHolder>(ExerciseEntryDiffCallback) {
@@ -26,9 +29,35 @@ class ExerciseEntryAdapter(private val onClick: (ExerciseEntry) -> Unit) :
 
         fun bind(entry: ExerciseEntry) {
             currentExerciseEntry = entry
-            // Set the text of the TextViews to the appropriate data from the ExerciseEntry
-            exerciseTitleView.text = entry.activityType.toString() // Replace with actual data
-            exerciseTextView.text = "${entry.distance} km, ${entry.duration} min"
+
+            // Format the dateTime from Long to Date and then to a String format
+            val date = Date(entry.dateTime)
+            val dateFormat = SimpleDateFormat("MMM d yyyy", Locale.getDefault())
+            val timeFormat = SimpleDateFormat("HH:mm:ss", Locale.getDefault())
+            val dateString = dateFormat.format(date)
+            val timeString = timeFormat.format(date)
+
+            // Assuming activityType is an Int that corresponds to a certain activity
+            val activityTypeString = getActivityTypeString(entry.activityType)
+
+            // Format distance and duration
+            val distanceString = "${entry.distance} Kms"
+            val hours = entry.duration.toInt() / 60
+            val minutes = entry.duration.toInt() % 60
+            val durationString = "${hours}hrs ${minutes}mins"
+
+            // Now set the text of the TextViews
+            exerciseTitleView.text = "Activity Type: $activityTypeString, $timeString, $dateString"
+            exerciseTextView.text = "$distanceString, $durationString"
+        }
+
+        private fun getActivityTypeString(activityType: Int): String {
+            return when (activityType) {
+                0 -> "Running"
+                1 -> "Walking"
+                // Add other cases as necessary
+                else -> "Unknown"
+            }
         }
     }
 
@@ -42,6 +71,9 @@ class ExerciseEntryAdapter(private val onClick: (ExerciseEntry) -> Unit) :
         val entry = getItem(position)
         holder.bind(entry)
     }
+
+
+
 }
 
 object ExerciseEntryDiffCallback : DiffUtil.ItemCallback<ExerciseEntry>() {
